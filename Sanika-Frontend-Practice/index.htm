@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: #e91e63;
+        border: 5px solid crimson;
+        border-radius: 10px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello Sanika!</h1>
+    <button>Press me!</button>
+    <input
+      type="text"
+      placeholder="enter your name"
+      onblur="myFun(this.value)"
+    />
+
+    <script>
+      function myFun(text) {
+        alert('Hello ' + text);
+      }
+    </script>
+  </body>
+</html>

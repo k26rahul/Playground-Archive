@@ -1,0 +1,118 @@
+:root {
+  --color-1: #312d27;
+  --color-1-darker: #141310;
+  --color-2: #f5f3fa;
+  --color-3: #4e0095;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  padding: 10px 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--color-1);
+  overflow: auto;
+}
+
+.calculator {
+  display: grid;
+  justify-items: center;
+  align-content: space-around;
+  font-size: 2rem;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--color-2);
+}
+
+.calculator__keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 5rem);
+  grid-template-rows: repeat(5, 5rem);
+  gap: 10px 5px;
+  justify-content: center;
+}
+
+.calculator__key {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border-radius: 50%;
+  color: var(--color-2);
+  background-color: var(--color-1);
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: rgb(38, 57, 77) 0px 10px 30px -10px;
+}
+
+.calculator__key:active {
+  transform: scale(0.95);
+  box-shadow: rgb(38, 57, 77) 0px 10px 5px -10px;
+}
+
+.calculator__display {
+  width: 100%;
+  border: 2px solid #312d27;
+  border-radius: 8px;
+  overflow: hidden;
+  display: grid;
+  margin-bottom: 1em;
+  box-shadow: rgb(38, 57, 77) 0px 10px 10px -10px;
+}
+
+.calculator__display:focus-within {
+  border-color: #312d27;
+  box-shadow: rgb(38, 57, 77) 0px 10px 30px -10px;
+}
+
+.calculator__input {
+  font-size: 1.5rem;
+  text-align: right;
+  padding: 0.6em 0.3em;
+  border: none;
+  border-bottom: 2px dashed #312d27;
+  outline: none;
+}
+
+.calculator__output {
+  font-size: 1.2rem;
+  text-align: right;
+  padding: 0.5em;
+  background: antiquewhite;
+}
+
+@media (max-width: 32rem) {
+  .calculator {
+    font-size: 1.2rem;
+  }
+
+  .calculator__keypad {
+    grid-template-columns: repeat(4, 4.5rem);
+    grid-template-rows: repeat(5, 4.5rem);
+    gap: 10px 5px;
+  }
+}

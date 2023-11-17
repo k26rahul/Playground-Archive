@@ -1,0 +1,117 @@
+"2"
+-> [2]
+
+"2+3"
+-> [2, add, 3]
+
+"2+3-1+2"
+-> [2, add, 3, minus, 1, add, 2]
+
+args = [2, 3]
+pendingOp = add
+minus -> resolve -> [add(2, 3), 1, add, 2]
+
+args = [1]
+pendingOp = minus
+add -> resolve -> [minus(add(2, 3), 1), 2]
+
+args = [2]
+pendingOp = add
+-> resolve -> add(minus(add(2, 3), 1), 2)
+              6
+
+Approach 2
+
+[2, add, 3, minus, 1, add, 2]
+sum([+2, +3, -1, +2])
+
+[minus, 2, add, 3, minus, 1, add, 2]
+sum([-2, +3, -1, +2])
+
+Parsing "20+113-1+2":
+
+"20" > 20
++
+"113" > 113
+-
+"1" > 1
++
+"2" > 2
+
+[20, +113, -1, +2] = expression(20, +113, -1, +2)
+sum([20, +113, -1, +2])
+
+"(2+(2-1)/10)*10-1^sqrt(100)"
+
++- > +
+*/ > *
+a^b, a+b
+sqrt(a)
+
+{"10 298 166 15 214 1625 +"}
+
+Brahmastra approach:
+
+"| (2+(2-1)/10)*10 |-| 1^sqrt(100) |"
+
+( -> Creates a new execution context -> It means creating a new `expression` branch -> Preparing a `term` of an algebraic expression
+2
+)
+
+expression((2+(2-1)/10)*10, minus, 1^sqrt(100))
+
+expression(
+  expression((2+(2-1)/10), multiply, 10), minus, 1^sqrt(100))
+
+expression(
+  expression(
+    expression(2+(2-1), division, 10), multiply, 10), minus, 1^sqrt(100))
+
+expression(
+  expression(
+    expression(expression(2, add, expression(2, minus, 1)), division, 10), multiply, 10), minus, 1^sqrt(100))
+
+expression(
+  expression(
+    expression(expression(2, add, expression(2, minus, 1)), division, 10), multiply, 10), minus, expression(1, pow, sqrt(100)))
+
+(2+(2-1)/10)*10 {-} 1^sqrt(100)
+(2+(2-1)/10) {*} 10 <---> 1 {^} sqrt(100)
+...
+
+"(2+(2-1)/10)*10-1^sqrt(100)"
+"(2+(2-1)/10)*10"
+
+expression(
+  expression(
+    expression(
+      2, +, expression(
+        expression(2, -, 1), /, 10
+      )
+    ), *, 10
+  ), -, expression(1, ^, sqrt(100))
+)
+
+---
+
+expression(
+  expression(
+    expression(2, +, expression(
+      expression(2, -, 1), /, 10
+    )), *, 10
+  ), -, expression(1, ^, expression(sqrt(100)))
+)
+
+---
+
+sum(56 +(a) -(b) +(c))
+
+---
+
+
+2
+2 + 2
+2 + 2 - 1
+2 + 2 - 1 * 10 / 10 ^ 1 * 1! * 100% + sq(25) + log2(2! * 1 + 2) + log10(100)
+4 + min(15, 16, 187) + √100 + ∛27
+
