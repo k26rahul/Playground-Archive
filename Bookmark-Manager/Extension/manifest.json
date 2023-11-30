@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Bookmark Manager",
+  "version": "1.0",
+  "description": "Enhance bookmark management in Chrome by providing advanced grouping, filtering, and sorting features.",
+  "permissions": ["bookmarks"],
+  "action": {
+    "default_icon": "./icons/favicon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

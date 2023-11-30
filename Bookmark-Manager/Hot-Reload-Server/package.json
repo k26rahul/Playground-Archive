@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "ws": "^8.14.2"
+  }
+}
