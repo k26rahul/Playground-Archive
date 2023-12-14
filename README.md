@@ -1,14 +1,17 @@
-# Experiments 💻🔬
+# Playground Archive 📦🔍
 
-Welcome to my coding experiments! This repository serves as the home for my experimental projects and ideas.
+Archived: Experimental Projects And Ideas
+
+Welcome to my coding playground archive! This repository houses archived projects and ideas.
 
 ## Usage
 
-- Explore the contents freely.
+- Explore freely.
 - Utilize any useful findings in your projects.
 
 ## Note
 
-These are experimental ideas, and I may not actively be working on them.
+- Contains archived experimental projects and ideas.
+- May or may not have plans to work on them.
 
 Happy coding! 🚀
