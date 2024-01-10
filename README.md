@@ -1,6 +1,6 @@
 # Playground Archive 📦🔍
 
-This repository contains archived *experimental* projects and ideas.
+This repository contains archived experimental projects and ideas.
 
 ## Usage
 
